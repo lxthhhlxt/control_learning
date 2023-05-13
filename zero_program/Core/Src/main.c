@@ -86,7 +86,6 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-  volatile int a = 0;
 
   /* USER CODE END 2 */
 
@@ -94,9 +93,23 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    for(int r = 0; r < 2; r++)
+    {
+      for(int g = 0; g < 2; g++)
+      {
+        for(int b = 0; b < 2; b++)
+        {
+          HAL_GPIO_TogglePin(RGB_B_GPIO_Port, RGB_B_Pin);
+          HAL_Delay(200);
+        }
+        HAL_GPIO_TogglePin(RGB_G_GPIO_Port, RGB_G_Pin);
+        HAL_Delay(200);
+      }     
+      HAL_GPIO_TogglePin(RGB_R_GPIO_Port, RGB_R_Pin);
+      HAL_Delay(200);
+    }
     /* USER CODE END WHILE */
-    a = a % 10 + 1;
-    HAL_Delay(10);
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
