@@ -1,6 +1,7 @@
 --cpu=Cortex-M4.fp.sp
 "zero_program\main.o"
 "zero_program\gpio.o"
+"zero_program\tim.o"
 "zero_program\stm32f4xx_it.o"
 "zero_program\stm32f4xx_hal_msp.o"
 "zero_program\stm32f4xx_hal_tim.o"
